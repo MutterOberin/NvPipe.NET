@@ -1,5 +1,5 @@
 # NvPipe.Net
-A .NET wrapper for the [NvPipe](https://www.google.com)https://github.com/NVIDIA/NvPipe) Project.
+A .NET wrapper for the [NvPipe](https://github.com/NVIDIA/NvPipe) Project.
 
 ### Content
 * [News](https://github.com/MutterOberin/NvPipe.NET#news)
