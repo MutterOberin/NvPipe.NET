@@ -1,4 +1,4 @@
-# NvPipe.NET
+# NvPipe.Net
 A .NET wrapper for the [NvPipe](https://www.google.com)https://github.com/NVIDIA/NvPipe) Project.
 
 ### Content
@@ -13,11 +13,12 @@ A .NET wrapper for the [NvPipe](https://www.google.com)https://github.com/NVIDIA
 Start of the Project
 
 ### Introduction
-NvPipe is a simple and lightweight C API library for low-latency video compression [(read more)](https://github.com/NVIDIA/NvPipe#introduction). This project aims to wrap the calls to NvPipe.dll for the direct use with [OpenTK](https://github.com/opentk/opentk) based .NET applications.
+NvPipe is a simple and lightweight C API library for low-latency video compression [(read more)](https://github.com/NVIDIA/NvPipe#introduction). This project aims to wrap the calls to NvPipe.dll for the direct use with [OpenTK](https://github.com/opentk/opentk#opentk) based .NET applications.
 
 ### Installation
-* Follow the Installation procedure for NvPipe [Installation](https://github.com/NVIDIA/NvPipe#installation)
-* Clone and build NvPipe.NET
+* Follow the installation procedure for NvPipe [Installation](https://github.com/NVIDIA/NvPipe#installation)
+* Clone and build NvPipe.Net
+* Add the NvPipe.Net.dll to your project
 
 ### Examples
 * in progress
