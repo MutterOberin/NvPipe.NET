@@ -16,6 +16,8 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
+using OpenTK.Graphics.OpenGL;
+
 namespace NvPipe.Net
 {
     /// <summary>
@@ -23,8 +25,8 @@ namespace NvPipe.Net
     /// </summary>
     public enum NvPipe_Codec
     {    
-        NvPipe_H264,
-        NvPipe_HEVC
+        H264,
+        HEVC
     }
 
 
@@ -33,8 +35,8 @@ namespace NvPipe.Net
     /// </summary>
     public enum NvPipe_Compression
     {
-        NvPipe_LOSSY,
-        NvPipe_LOSSLESS
+        Lossy,
+        Lossless
     }
 
 
@@ -43,11 +45,11 @@ namespace NvPipe.Net
     /// </summary>
     public enum NvPipe_Format
     {
-        NvPipe_BGRA32,
-        NvPipe_UINT4,
-        NvPipe_UINT8,
-        NvPipe_UINT16,
-        NvPipe_UINT32
+        BGRA32,
+        uint4,
+        uint8,
+        uint16,
+        uint32
     }
 
 
@@ -103,20 +105,35 @@ namespace NvPipe.Net
         //[DllImport("NvPipe.dll")]
         //public static extern ulong NvPipe_Encode(IntPtr nvp, void* src, ulong srcPitch, uint8_t* dst, ulong dstSize, uint width, uint height, bool forceIFrame);
 
-        ///// <summary>
-        ///// Encodes a single frame from an OpenGL texture.
-        ///// </summary>
-        ///// <param name="nvp">Encoder instance.</param>
-        ///// <param name="texture">OpenGL texture ID.</param>
-        ///// <param name="target">OpenGL texture target.</param>
-        ///// <param name="dst">Host memory pointer for compressed output.</param>
-        ///// <param name="dstSize">Available space for compressed output. Will be overridden by effective compressed output size.</param>
-        ///// <param name="width">Width of frame in pixels.</param>
-        ///// <param name="height">Height of frame in pixels.</param>
-        ///// <param name="forceIFrame">Enforces an I-frame instead of a P-frame.</param>
-        ///// <returns>Size of encoded data in bytes or 0 on error.</returns>
-        //[DllImport("NvPipe.dll")]
-        //public static extern ulong NvPipe_EncodeTexture(IntPtr nvp, uint texture, uint target, uint8_t* dst, ulong dstSize, uint width, uint height, bool forceIFrame);
+        /// <summary>
+        /// Encodes a single frame from an OpenGL texture.
+        /// </summary>
+        /// <param name="nvp">Encoder instance.</param>
+        /// <param name="texture">OpenGL texture ID.</param>
+        /// <param name="target">OpenGL texture target.</param>
+        /// <param name="dst">Host memory pointer for compressed output.</param>
+        /// <param name="dstSize">Available space for compressed output. Will be overridden by effective compressed output size.</param>
+        /// <param name="width">Width of frame in pixels.</param>
+        /// <param name="height">Height of frame in pixels.</param>
+        /// <param name="forceIFrame">Enforces an I-frame instead of a P-frame.</param>
+        /// <returns>Size of encoded data in bytes or 0 on error.</returns>
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_EncodeTexture")]
+        public static extern ulong EncodeTexture(IntPtr nvp, uint texture, TextureTarget target, byte[] dst, ulong dstSize, uint width, uint height, bool forceIFrame);
+
+        /// <summary>
+        /// Encodes a single frame from an OpenGL texture.
+        /// </summary>
+        /// <param name="nvp">Encoder instance.</param>
+        /// <param name="texture">OpenGL texture ID.</param>
+        /// <param name="target">OpenGL texture target.</param>
+        /// <param name="dst">Host memory pointer for compressed output.</param>
+        /// <param name="dstSize">Available space for compressed output. Will be overridden by effective compressed output size.</param>
+        /// <param name="width">Width of frame in pixels.</param>
+        /// <param name="height">Height of frame in pixels.</param>
+        /// <param name="forceIFrame">Enforces an I-frame instead of a P-frame.</param>
+        /// <returns>Size of encoded data in bytes or 0 on error.</returns>
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_EncodeTexture")]
+        public static extern ulong EncodeTexture(IntPtr nvp, uint texture, TextureTarget target, IntPtr dst, ulong dstSize, uint width, uint height, bool forceIFrame);
 
 
         ///// <summary>

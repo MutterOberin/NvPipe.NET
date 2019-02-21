@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NvPipe.Net")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Wito Engelke")]
+[assembly: AssemblyCopyright("MIT Licence Copyright ©  2019 MutterOberin")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

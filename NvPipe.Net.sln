@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvPipe.Net", "NvPipe.Net.csproj", "{BD9FC5BA-33B9-43AF-BC3F-1FEB964CEF7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvPipe.Net", "NvPipe.Net\NvPipe.Net.csproj", "{BD9FC5BA-33B9-43AF-BC3F-1FEB964CEF7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvPipe.Net.Example", "..\NvPipe.Net.Example\NvPipe.Net.Example.csproj", "{59FC405E-3C2D-44D6-A2FC-9DDA9FC633AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NvPipe.Net.Example", "NvPipe.Net.Example\NvPipe.Net.Example.csproj", "{59FC405E-3C2D-44D6-A2FC-9DDA9FC633AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
