@@ -15,6 +15,15 @@ namespace NvPipe.Net.Example
         public Form_Main()
         {
             InitializeComponent();
+
+            // Init
+            Console.WriteLine("Init: Version: " + NvPipe.Version().ToString());
+
+            IntPtr nvp = NvPipe.NvPipe_CreateEncoder(NvPipe_Format.NvPipe_BGRA32, NvPipe_Codec.NvPipe_H264, NvPipe_Compression.NvPipe_LOSSY, 32 * 1000 * 1000, 24);
+
+            Console.WriteLine("Init: Error: " + NvPipe.NvPipe_GetError(nvp));
+
+            NvPipe.NvPipe_Destroy(nvp);
         }
     }
 }
