@@ -45,9 +45,9 @@ namespace NvPipe.Net.Example
 
         private void NvPipe_Init()
         {
-            this.nvp = NvPipe.NvPipe_CreateEncoder(NvPipe_Format.NvPipe_BGRA32, NvPipe_Codec.NvPipe_H264, NvPipe_Compression.NvPipe_LOSSY, 32 * 1000 * 1000, 24);
+            this.nvp = NvPipe.CreateEncoder(NvPipe_Format.NvPipe_BGRA32, NvPipe_Codec.NvPipe_H264, NvPipe_Compression.NvPipe_LOSSY, 32 * 1000 * 1000, 24);
 
-            error_message = NvPipe.NvPipe_GetError(this.nvp);
+            error_message = NvPipe.GetError(this.nvp);
 
             if (error_message.Contains("Error"))
             {
@@ -65,7 +65,7 @@ namespace NvPipe.Net.Example
 
         private void NvPipe_Destroy()
         {
-            NvPipe.NvPipe_Destroy(this.nvp);
+            NvPipe.Destroy(this.nvp);
         }
     }
 }

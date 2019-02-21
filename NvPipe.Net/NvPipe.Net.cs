@@ -13,6 +13,7 @@
  */
 
 using System;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace NvPipe.Net
@@ -49,15 +50,18 @@ namespace NvPipe.Net
         NvPipe_UINT32
     }
 
-    public class NvPipe
-    {
 
+    /// <summary>
+    /// Static Wrapper Class for communication with NvPipe.dll
+    /// </summary>
+    public static class NvPipe
+    {
         /// <summary>
         /// Returns the Version of the wrapper for NvPipe.dll.
         /// </summary>
         public static Version Version()
         {
-            return new Version(0, 1, 0);
+            return Assembly.GetExecutingAssembly().GetName().Version;
         }
 
         /// <summary>
@@ -69,8 +73,8 @@ namespace NvPipe.Net
         /// <param name="bitrate">Bitrate in bit per second, e.g., 32 * 1000 * 1000 = 32 Mbps (for lossy compression only).</param>
         /// <param name="targetFrameRate">At this frame rate the effective data rate approximately equals the bitrate (for lossy compression only).</param>
         /// <returns>null on error</returns>
-        [DllImport("NvPipe.dll")]
-        public static extern IntPtr NvPipe_CreateEncoder(NvPipe_Format format, NvPipe_Codec codec, NvPipe_Compression compression, ulong bitrate, uint targetFrameRate);
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_CreateEncoder")]
+        public static extern IntPtr CreateEncoder(NvPipe_Format format, NvPipe_Codec codec, NvPipe_Compression compression, ulong bitrate, uint targetFrameRate);
 
 
 
@@ -80,8 +84,8 @@ namespace NvPipe.Net
         /// <param name="nvp">Encoder instance.</param>
         /// <param name="bitrate">Bitrate in bit per second, e.g., 32 * 1000 * 1000 = 32 Mbps (for lossy compression only).</param>
         /// <param name="targetFrameRate">At this frame rate the effective data rate approximately equals the bitrate (for lossy compression only).</param>
-        [DllImport("NvPipe.dll")]
-        public static extern void NvPipe_SetBitrate(IntPtr nvp, ulong bitrate, uint targetFrameRate);
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_SetBitrate")]
+        public static extern void SetBitrate(IntPtr nvp, ulong bitrate, uint targetFrameRate);
 
 
         ///// <summary>
@@ -188,8 +192,8 @@ namespace NvPipe.Net
         /// Cleans up an encoder or decoder instance.
         /// </summary>
         /// <param name="nvp">The encoder or decoder instance to destroy.</param>
-        [DllImport("NvPipe.dll")]
-        public static extern void NvPipe_Destroy(IntPtr nvp);
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_Destroy")]
+        public static extern void Destroy(IntPtr nvp);
 
 
         /// <summary>
@@ -197,7 +201,7 @@ namespace NvPipe.Net
         /// </summary>
         /// <param name="nvp">Encoder or decoder. Use NULL to get error message if encoder or decoder creation failed.</param>
         /// <returns>Returned string must not be deleted.</returns>
-        [DllImport("NvPipe.dll")]
-        public static extern string NvPipe_GetError(IntPtr nvp);        
+        [DllImport("NvPipe.dll", EntryPoint = "NvPipe_GetError")]
+        public static extern string GetError(IntPtr nvp);        
     }
 }
