@@ -20,5 +20,9 @@ NvPipe is a simple and lightweight C API library for low-latency video compressi
 * Clone and build NvPipe.Net
 * Add the NvPipe.Net.dll to your project
 
+### Dependencies
+* NvPipe
+* OpenTK (for examples, bound via NuGet)
+
 ### Examples
-* in progress
+* In progress
