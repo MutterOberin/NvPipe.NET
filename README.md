@@ -3,11 +3,15 @@ A .NET wrapper for the [NvPipe](https://github.com/NVIDIA/NvPipe) Project.
 
 ### Content
 * [News](https://github.com/MutterOberin/NvPipe.NET#news)
-* [News](https://github.com/MutterOberin/NvPipe.NET#introduction)
+* [Introduction](https://github.com/MutterOberin/NvPipe.NET#introduction)
 * [Installation](https://github.com/MutterOberin/NvPipe.NET#installation)
 * [Examples](https://github.com/MutterOberin/NvPipe.NET#example)
 
 ### News
+
+#### 2014-02-21
+* WrapperClass created
+* WrapperClass uses OpenTK Enums for TextureTarget
 
 #### 2014-02-06
 Start of the Project
@@ -22,6 +26,7 @@ NvPipe is a simple and lightweight C API library for low-latency video compressi
 
 ### Dependencies
 * NvPipe
+* OpenTK (for wrapper, bound via NuGet)
 * OpenTK (for examples, bound via NuGet)
 
 ### Examples
